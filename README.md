@@ -174,7 +174,7 @@ You are free to share and adapt the work, provided proper attribution is given.
 ## 📬 Contact
 
 * **Issues/Contributions:** GitHub Issues
-* **Feedback/Questions:** \[gagana.md.work@gmail.com]
+* **Feedback/Questions:** gagana.md.work@gmail.com
 
 ---
 
