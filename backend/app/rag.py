@@ -1,14 +1,15 @@
 import requests
 
 def enrich_prompt(prompt: str) -> str:
-    """RAG-style prompt enrichment from Wikipedia."""
-    entity = prompt.split()[0]
+    """Basic RAG - add context from Wikipedia to your prompt, robust error handling."""
+    entity = prompt.split()
     try:
         wiki = requests.get(f"https://en.wikipedia.org/api/rest_v1/page/summary/{entity}")
-        if wiki.ok:
+        if wiki.ok and wiki.json().get("extract"):
             extract = wiki.json().get("extract", "")
-            if extract:
-                return f"{prompt}\nContext: {extract[:180]}"
-    except Exception:
-        pass
+            return f"{prompt}\nContext: {extract[:180]}"
+        else:
+            print(f"Wikipedia enrich failed for entity: {entity}, response: {wiki.text}")
+    except Exception as e:
+        print(f"Wikipedia API error: {str(e)}")
     return prompt

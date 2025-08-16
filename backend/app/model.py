@@ -5,7 +5,14 @@ from dotenv import load_dotenv
 load_dotenv()
 REPLICATE_API_TOKEN = os.getenv("REPLICATE_API_TOKEN")
 
+# TEST MODE - set TEST_MODE = True for demo with a fixed video, False for actual generation
+TEST_MODE = True  # Change to False for live model calls
+
 def generate_video(enriched_prompt, duration=5):
+    if TEST_MODE:
+        # Use a free, always-available sample video for demo
+        return "https://www.w3schools.com/html/mov_bbb.mp4", "Demo video."
+
     inference_url = "https://api.replicate.com/v1/predictions"
     headers = {
         "Authorization": f"Token {REPLICATE_API_TOKEN}",
@@ -24,14 +31,15 @@ def generate_video(enriched_prompt, duration=5):
     }
     try:
         resp = requests.post(inference_url, headers=headers, json=payload)
+        print("Replicate response POST:", resp.text)
         if not resp.ok or "id" not in resp.json():
             return None, "Failed to start video generation."
 
         prediction_id = resp.json()["id"]
-        # Poll status (streaming optimization: return as soon as ready)
         import time
         for _ in range(60):
             poll = requests.get(f"{inference_url}/{prediction_id}", headers=headers)
+            print("Replicate response POLL:", poll.text)
             res_json = poll.json()
             status_ = res_json.get("status")
             if status_ == "succeeded":
@@ -42,4 +50,5 @@ def generate_video(enriched_prompt, duration=5):
             time.sleep(2)
         return None, "Video generation timed out."
     except Exception as e:
+        print("Replicate call failed:", str(e))
         return None, f"Error: {str(e)}"

@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Request
+from fastapi import APIRouter
 from pydantic import BaseModel
 from app.cache import get_from_cache, save_in_cache
 from app.rag import enrich_prompt
@@ -18,7 +18,6 @@ def health_check():
 def generate_endpoint(req: PromptRequest):
     prompt = req.prompt.strip()
     duration = min(max(req.duration, 5), 10)
-
     if len(prompt) < 3:
         return {"message": "Prompt must be at least 3 characters."}
 
@@ -28,9 +27,12 @@ def generate_endpoint(req: PromptRequest):
         return {"video_url": cached, "message": "Served from cache."}
 
     enriched = enrich_prompt(prompt)
+    print(f"Calling model with enriched prompt: {enriched[:90]}...")
+
     video_url, msg = generate_video(enriched, duration)
     if video_url:
         save_in_cache(cache_key, video_url)
         return {"video_url": video_url, "message": msg}
     else:
+        print(f"Video generation failed: {msg}")
         return {"message": msg}
