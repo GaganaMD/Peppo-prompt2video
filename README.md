@@ -1,39 +1,4 @@
-# AI Video Generator 🎬✨
-
-Turn your text prompts into short videos using cutting-edge AI.
-
----
-
-## 🚀 Live Demo
-
-* **Frontend:** \[Your Live Frontend URL Here]
-* **Backend:** \[Your Live Backend URL Here]
-
-### 🎥 Demo Video
-
-GitHub’s Markdown does not support inline playback of `.mp4` files. To make the demo **bigger and clearer**, you can embed it with custom HTML sizing:
-
-```html
-<video src="assets/Demo%20recordings.mp4" width="800" controls autoplay loop></video>
-```
-
-This will render a large, centered video player (800px wide). You can adjust the width (e.g., `100%` for full width) depending on your preference.
-
-Or use a `.gif` for inline preview:
-
-```markdown
-![Demo](assets/demo1.gif)
-```
-
-And keep a link to the `.mp4` for full-quality playback:
-
-```markdown
-[🎬 Watch Demo Video](assets/Demo%20recordings.mp4)
-```
-
-> ⚡ Recommended: Add both — a big inline video preview + `.mp4` link for full quality.
-
----
+# Peppo-prompt2video
 
 ## 📝 Project Overview
 
@@ -103,8 +68,8 @@ ai-video-app/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOURUSERNAME/ai-video-app.git
-cd ai-video-app
+git clone https://github.com/GaganaMD/Peppo-prompt2video.git
+cd Peppo-prompt2video
 ```
 
 ### 2. Backend Setup
@@ -209,7 +174,7 @@ You are free to share and adapt the work, provided proper attribution is given.
 ## 📬 Contact
 
 * **Issues/Contributions:** GitHub Issues
-* **Feedback/Questions:** \[YOUR EMAIL]
+* **Feedback/Questions:** \[gagana.md.work@gmail.com]
 
 ---
 
