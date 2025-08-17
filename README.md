@@ -9,19 +9,29 @@ Turn your text prompts into short videos using cutting-edge AI.
 * **Frontend:** \[Your Live Frontend URL Here]
 * **Backend:** \[Your Live Backend URL Here]
 
-### 🎥 Demo Video Reference
+### 🎥 Demo Video
 
-If you place your demo video or GIF under `assets/`, you can embed it like this:
+GitHub’s Markdown does not support inline playback of `.mp4` files. To make the demo **bigger and clearer**, you can embed it with custom HTML sizing:
 
-```markdown
-![Demo](assets/demo.gif)
+```html
+<video src="assets/Demo%20recordings.mp4" width="800" controls autoplay loop></video>
 ```
 
-Or for an `.mp4` file:
+This will render a large, centered video player (800px wide). You can adjust the width (e.g., `100%` for full width) depending on your preference.
+
+Or use a `.gif` for inline preview:
 
 ```markdown
-<video src="assets/Demo%20recordings.mp4" controls width="600"></video>
+![Demo](assets/demo1.gif)
 ```
+
+And keep a link to the `.mp4` for full-quality playback:
+
+```markdown
+[🎬 Watch Demo Video](assets/Demo%20recordings.mp4)
+```
+
+> ⚡ Recommended: Add both — a big inline video preview + `.mp4` link for full quality.
 
 ---
 
@@ -55,7 +65,9 @@ This is a minimal, scalable, and production-grade web application that generates
 
 | UI Example                          | Description               |
 | ----------------------------------- | ------------------------- |
-| ![Demo Screenshot](assets/demo.gif) | Prompt-to-video in action |
+| ![Demo Screenshot](assets/demo1.gif) | Prompt-to-video in action |
+
+Full-quality demo available here: [🎬 Demo Video](assets/Demo%20recordings.mp4)
 
 ---
 
@@ -197,7 +209,7 @@ You are free to share and adapt the work, provided proper attribution is given.
 ## 📬 Contact
 
 * **Issues/Contributions:** GitHub Issues
-* **Feedback/Questions:** \[gagana.md.work@gmail.com]
+* **Feedback/Questions:** \[YOUR EMAIL]
 
 ---
 
