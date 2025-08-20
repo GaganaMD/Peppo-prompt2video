@@ -119,6 +119,7 @@ docker-compose up --build
 ## 🌐 Deployment
 
 Link to view the deployed app: https://peppo-prompt2video-9qfj7eejm-gaganas-projects-9893fb6b.vercel.app/
+Backend: https://peppo-prompt2video.onrender.com/
 
 Configuration:
 
