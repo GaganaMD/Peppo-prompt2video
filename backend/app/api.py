@@ -1,8 +1,9 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
-from app.cache import get_from_cache, save_in_cache
-from app.rag import enrich_prompt
-from app.model import generate_video
+
+from .cache import get_from_cache, save_in_cache
+from .rag import enrich_prompt
+from .model import generate_video
 
 router = APIRouter()
 
