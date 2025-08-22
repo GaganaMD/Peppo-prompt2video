@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// Changed to use NEXT_PUBLIC_API_URL as requested
+// Using NEXT_PUBLIC_API_URL for the backend URL, configured in Vercel environment variables
 const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export default function App() {

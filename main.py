@@ -10,7 +10,7 @@ app = FastAPI()
 # e.g., ["https://your-frontend.vercel.app"]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://peppo-prompt2video-p93frcy07-gaganas-projects-9893fb6b.vercel.app/"], 
+    allow_origins=["https://peppo-prompt2video.vercel.app"], 
     allow_credentials=True,
     allow_methods=["*"],  # Allows all methods (GET, POST, PUT, DELETE, etc.)
     allow_headers=["*"],  # Allows all headers
