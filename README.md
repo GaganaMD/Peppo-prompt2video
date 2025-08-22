@@ -11,6 +11,9 @@ This is a minimal, scalable, and production-grade web application that generates
 
 ---
 
+Frontend: https://peppo-prompt2video.vercel.app/
+Backend: https://peppo-prompt2video.onrender.com/
+
 ## 🖥️ Features
 
 * ✅ Text prompt input (with length validation)
